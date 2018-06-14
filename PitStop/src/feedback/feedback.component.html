@@ -1,0 +1,18 @@
+<div class="form-group required needs-validation">
+    
+    <label class="control-label" >Did you find everything you need in Basic Tools and Applications?</label>
+    <div class="form-check form-check-inline" style="margin-left: 5px;" required="true">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Yes</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+            aria-expanded="false" aria-controls="collapseExample">
+        <label class="form-check-label" for="inlineRadio2">No</label>
+    </div>
+    <div ng-if="model.notFoundEverything">
+        <input type="text" name="" id="" ng-required="true">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit form</button>
+</div>
