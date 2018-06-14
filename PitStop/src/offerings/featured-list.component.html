@@ -1,0 +1,34 @@
+ <div>
+    <!-- <ul>
+        <li style="display: inline-block; list-style: none; margin-right:8px">
+            <h6>To see your curated list of frequently used configurations</h6>
+        </li>
+        <li style="display: inline-block; list-style: none">
+            <a href='' ng-if="featuredList && featuredList.length > 0">Click here</a> 
+        </li>
+    </ul> -->
+    
+    <div>
+        <h4>{{featuredListTitle}}</h4>
+        
+        <ul>
+                <li style="display: inline-block; list-style: none;"
+                    *ngFor="let featuredItem of featuredList">                    
+                    <div class="card" style="margin:5px; width:300px">
+                        <div class="card-header">
+                            {{featuredItem.featuredListName}}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{featuredItem.featuredListText}}</h5>
+                            <p class="card-text" >{{featuredItem.featuredListDescription}}</p>
+                            <a href="#" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>                    
+                </li>
+        </ul>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary">Create your own configuration</button>
+    </div>
+</div>
+ 

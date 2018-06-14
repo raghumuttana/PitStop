@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   }
 )
 export class AppComponent {
-  pageTitle = 'Pit Stop for System Administrators';
+  pageTitle = 'Post-Build Configuration Management';
 }
 
