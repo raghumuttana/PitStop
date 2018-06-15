@@ -6,14 +6,19 @@ import { FeaturedListComponent } from '../offerings/featured-list.component';
 import { BasicToolsComponent } from '../offerings/customOfferings/basictools/basictools.component';
 import { ApplicationListComponent } from '../offerings/customOfferings/applications/applications.component';
 import { FeedBackComponent } from '../feedback/feedback.component';
- 
+import { BuildReportComponent } from '../buildreports/buildreport/buildreport.component';
+import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     FeaturedListComponent,
     BasicToolsComponent,
     ApplicationListComponent,
-    FeedBackComponent
+    FeedBackComponent,
+    BuildReportComponent,
+    BuildSummaryComponent
   ],
   imports: [
     BrowserModule

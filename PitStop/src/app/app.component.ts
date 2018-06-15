@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   }
 )
 export class AppComponent {
-  pageTitle = 'Post-Build Configuration Management';
+  pageTitle = 'ICP Build Report';
 }
 

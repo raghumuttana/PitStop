@@ -1,5 +1,4 @@
-<div>
-    <h1>{{pageTitle}}</h1>
+<div> 
     <!-- <div>
         <app-featuredlist>
             
@@ -13,7 +12,39 @@
     <!-- <app-applications>
 
     </app-applications> -->
-    <app-feedback>
-        
-    </app-feedback>
+    <!-- <app-feedback>
+
+    </app-feedback> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ICP Build Report</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#buildsummary" data-toggle="collapse">Summary </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#detail" data-toggle="collapse">Detail</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#featuredlist" data-toggle="collapse">Featured Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#basictools" data-toggle="collapse">Basic Tools</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#applications" data-toggle="collapse">Applications</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        <div style="margin:30px;padding: 30px;">
+        <app-buildreport  id="detail" class="collapse"></app-buildreport>
+        <app-buildsummary id="buildsummary" class="collapse"></app-buildsummary>
+        <app-featuredlist id="featuredlist" class="collapse"></app-featuredlist>
+        <app-basictools   id="basictools" class="collapse"></app-basictools>
+        <app-applications id="applications" class="collapse"></app-applications>
+        </div>
 </div>
