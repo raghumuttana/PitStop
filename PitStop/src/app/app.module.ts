@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FeaturedListComponent } from '../offerings/featured-list.component';
 import { BasicToolsComponent } from '../offerings/customOfferings/basictools/basictools.component';
@@ -8,6 +8,7 @@ import { ApplicationListComponent } from '../offerings/customOfferings/applicati
 import { FeedBackComponent } from '../feedback/feedback.component';
 import { BuildReportComponent } from '../buildreports/buildreport/buildreport.component';
 import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary.component';
+import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker.component';
 
 
 @NgModule({
@@ -18,10 +19,12 @@ import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary
     ApplicationListComponent,
     FeedBackComponent,
     BuildReportComponent,
-    BuildSummaryComponent
+    BuildSummaryComponent,
+    ProgressTrackerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

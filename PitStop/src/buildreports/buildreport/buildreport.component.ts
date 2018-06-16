@@ -8,22 +8,24 @@ import { Component, OnInit } from '@angular/core';
 
 export class BuildReportComponent implements OnInit {
     constructor() { }
-
-    basicToolsList: any[] = [
+    listFilters = '';
+    recordedFilters = '';
+    imgSrc: './images/mycompute-logo.JPG';
+    operatingSystemsList: any[] = [
         {
-            basicToolId : 1,
-            basicToolName : 'Windows Server 2012 R2',
-            basicToolText : '',
+            operatingSystemId : 1,
+            operatingSystemName : 'Windows Server 2012 R2',
+            operatingSystemText : '',
             // tslint:disable-next-line:max-line-length
-            basicToolDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
+            operatingSystemDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
             selectButtonText : 'Select'
         },
         {
-            basicToolId : 2,
-            basicToolName : 'Windows Server 2008',
-            basicToolText : '',
+            operatingSystemId : 2,
+            operatingSystemName : 'Windows Server 2008',
+            operatingSystemText : '',
             // tslint:disable-next-line:max-line-length
-            basicToolDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
+            operatingSystemDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
             selectButtonText : 'Select'
         }
     ];
@@ -119,6 +121,11 @@ export class BuildReportComponent implements OnInit {
             statusText : 'Some Description about the status'
         }
     ];
+
+    filterResults(): void {
+     //   this.listFilters =  this.listFilters + ' ' + this.listFilters ;
+     this.recordedFilters = this.recordedFilters + this.listFilters;
+    }
 
     ngOnInit() { }
 }
