@@ -17,18 +17,27 @@
     </app-feedback> -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">ICP Build Report</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <ul class="navbar-nav">
+                        <li><a [routerLink]="['/buildsummary']">ICP Build Summary</a></li>
+                        <li><a [routerLink]="['/buildreport']">ICP Build Details</a></li>
+                        <
+                </ul> -->
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#buildsummary" data-toggle="collapse">Summary </a>
+                    <a class="nav-link" [routerLink]="['/buildsummary']">Summary </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#detail" data-toggle="collapse">Detail</a>
+                    <a class="nav-link" [routerLink]="['/buildreport']">Detail</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/progresstracker']">Workflow Progress</a>
+                    </li>
+                <!-- <li class="nav-item">
                         <a class="nav-link" href="#workflowprogress" data-toggle="collapse">Workflow Progress</a>
                     </li>
                 <li class="nav-item">
@@ -39,16 +48,35 @@
                 </li>
                 <li class="nav-item">
                         <a class="nav-link" href="#applications" data-toggle="collapse">Applications</a>
-                </li>
+                </li> -->
             </ul>
+           
+            
         </div>
         </nav>
         <div style="margin:30px;padding: 30px;">
-        <app-buildreport  id="detail" class="collapse"></app-buildreport>
-        <app-buildsummary id="buildsummary" class="collapse"></app-buildsummary>
-        <app-featuredlist id="featuredlist" class="collapse"></app-featuredlist>
+                <div class="container">
+                        <router-outlet>
+                        </router-outlet>
+                    </div>
+        <!-- <app-buildreport  id="detail" class="collapse"></app-buildreport> -->
+        <!-- <app-buildsummary id="buildsummary" class="collapse"></app-buildsummary> -->
+        <!-- <app-featuredlist id="featuredlist" class="collapse"></app-featuredlist>
         <app-basictools   id="basictools" class="collapse"></app-basictools>
         <app-applications id="applications" class="collapse"></app-applications>
-        <app-progresstracker id="workflowprogress" class="collapse"></app-progresstracker>
+        <app-progresstracker id="workflowprogress" class="collapse"></app-progresstracker> -->
         </div>
+        <!-- <div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <a class='navbar-brand'>{{pageTitle}}</a>
+                    <ul class="nav navbar-nav">
+                        <li><a [routerLink]="['/buildsummary']">ICP Build Summary</a></li>
+                        <li><a [routerLink]="['/buildreport']">ICP Build Details</a></li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div> -->
+       
 </div>

@@ -1,87 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { IOperatingSystem, IDuration, IEnvironment, IDatacenter } from './buildreport';
+import { OperatingSystemsService } from './operatingsystems.service';
+import { DurationService } from './durations.service';
+import { EnvironmentsService } from './environments.service';
 
 @Component({
     selector: 'app-buildreport',
     templateUrl: './buildreport.component.html',
-    styleUrls: ['./buildreport.component.css']
+    styleUrls: ['./buildreport.component.css'],
+    providers: [OperatingSystemsService, DurationService, EnvironmentsService]
 })
 
 export class BuildReportComponent implements OnInit {
-    constructor() { }
+    operatingSystemsList: IOperatingSystem[];
+    durationsList: IDuration[];
+    constructor(private _iOsService: OperatingSystemsService,
+                private _durationService: DurationService,
+                private _environmentService: EnvironmentsService) {
+    }
+
     listFilters = '';
     recordedFilters = '';
     imgSrc: './images/mycompute-logo.JPG';
-    operatingSystemsList: any[] = [
-        {
-            operatingSystemId : 1,
-            operatingSystemName : 'Windows Server 2012 R2',
-            operatingSystemText : '',
-            // tslint:disable-next-line:max-line-length
-            operatingSystemDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
-            selectButtonText : 'Select'
-        },
-        {
-            operatingSystemId : 2,
-            operatingSystemName : 'Windows Server 2008',
-            operatingSystemText : '',
-            // tslint:disable-next-line:max-line-length
-            operatingSystemDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.',
-            selectButtonText : 'Select'
-        }
-    ];
 
-    durationsList: any[] = [
-        {
-            durationId  : 1,
-            durationValue : 15,
-            durationText : '15 mins ago'
-        },
-        {
-            durationId  : 2,
-            durationValue : 30,
-            durationText : '30 mins ago'
-        },
-        {
-            durationId  : 3,
-            durationValue : 45,
-            durationText : '45 mins ago'
-        },
-        {
-            durationId  : 4,
-            durationValue : 60,
-            durationText : '1 Hour ago'
-        },
-        {
-            durationId  : 5,
-            durationValue : 600000,
-            durationText : 'Older than 1 hour'
-        }
-    ];
+    environmentsList: IEnvironment[];
 
-    environmentsList: any[] = [
-        {
-            environmentId  : 1,
-            environmentValue : 'DEV',
-            environmentText : 'Development environment'
-        },
-        {
-            environmentId  : 2,
-            environmentValue : 'SIT',
-            environmentText : 'SIT environment'
-        },
-        {
-            environmentId  : 3,
-            environmentValue : 'UAT',
-            environmentText : 'User Acceptance Test environment'
-        },
-        {
-            environmentId  : 3,
-            environmentValue : 'LIVE',
-            environmentText : 'Production/Live environment'
-        }
-    ];
-
-    dataCentersList: any[] = [
+    dataCentersList: IDatacenter[] = [
         {
             datacenterId  : 1,
             datacenterValue : 'AP-SG-C01 Data Center (Singapore, SGP)',
@@ -127,6 +71,10 @@ export class BuildReportComponent implements OnInit {
      this.recordedFilters = this.recordedFilters + this.listFilters;
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.operatingSystemsList = this._iOsService.getOperatingSystems();
+        this.durationsList = this._durationService.getDurations();
+        this.environmentsList = this._environmentService.getEnvironments();
+    }
 }
 
