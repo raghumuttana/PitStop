@@ -1,0 +1,108 @@
+
+<div class="form-row">
+    <h6>Refine By</h6>
+    <div class="table-responsive ">
+        <tr>
+            <td>
+                <a id="allFilters" href="#">[clear filters]</a>
+            </td>                   
+        </tr>
+        <tr>
+            <td>                  
+                    <h6><a href="#operatingSystems1" data-toggle="collapse">Operating System</a></h6>
+                    <div id="operatingSystems1" class="collapse">
+                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                        <div class="form-check" *ngFor="let os of operatingSystemsList; let i= index;">                
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    (click)='filterResults()'>
+                                <label class="form-check-label">
+                                    {{os.operatingSystemName}}
+                                </label>
+                            </div>                 
+                        </div>
+                    </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6><a href="#durations" data-toggle="collapse">Duration</a></h6>
+                <div id="durations" class="collapse">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <div class="form-check" *ngFor="let duration of durationsList">                
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                {{duration.durationText}}
+                            </label>
+                        </div>                 
+                    </div>
+                </div>
+                </td>
+        </tr>
+        <tr>
+            <td> 
+                <h6><a href="#environments" data-toggle="collapse">Environment</a></h6>                        
+                <div id="environments" class="collapse">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <div class="form-check" *ngFor="let environment of environmentsList">                
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                {{environment.environmentValue}}
+                            </label>
+                        </div>                 
+                    </div>
+                </div>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <h6><a href="#datacenters" data-toggle="collapse">Data Center</a></h6>
+                <div id="datacenters" class="collapse">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <div class="form-check" *ngFor="let dataCenter of dataCentersList">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                {{dataCenter.datacenterValue}}
+                            </label>
+                        </div>                 
+                    </div>
+                </div>                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h6><a href="#regions" data-toggle="collapse">Region</a></h6>                        
+                <div id="regions" class="collapse">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    <div class="form-check" *ngFor="let dataCenter of dataCentersList">                
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                {{dataCenter.datacenterValue}}
+                            </label>
+                        </div>                 
+                    </div>
+                </div>
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <h6><a href="#statuses" data-toggle="collapse">Status</a></h6>                                                        
+                <div id="statuses" class="collapse">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">                        
+                    <div class="form-check" *ngFor="let status of statusList">                
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label">
+                                {{status.statusValue}}
+                            </label>
+                        </div>                 
+                    </div>
+                </div>       
+            </td>
+        </tr>
+    </div>
+</div>

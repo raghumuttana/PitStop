@@ -10,7 +10,8 @@ import { ApplicationListComponent } from '../offerings/customOfferings/applicati
 import { FeedBackComponent } from '../feedback/feedback.component';
 import { BuildReportComponent } from '../buildreports/buildreport/buildreport.component';
 import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary.component';
-import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker.component';
+import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker/progresstracker.component';
+import { FiltersComponent } from '../buildreports/shared/filters/filters.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker
     FeedBackComponent,
     BuildReportComponent,
     BuildSummaryComponent,
-    ProgressTrackerComponent
+    ProgressTrackerComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker
     RouterModule.forRoot([
         {path: 'buildsummary', component: BuildSummaryComponent},
         {path: 'buildreport', component: BuildReportComponent},
-        {path: 'progresstracker/:id', component: ProgressTrackerComponent},
+        {path: 'buildreport/:id', component: ProgressTrackerComponent},
+        {path: 'progresstracker', component: BuildReportComponent},
         {path: '', redirectTo: 'buildsummary', pathMatch: 'full'},
         {path: '**', component: BuildSummaryComponent}
     ], {useHash: true})
