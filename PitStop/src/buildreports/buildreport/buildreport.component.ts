@@ -13,7 +13,7 @@ export class BuildReportComponent implements OnInit {
     listFilters = '';
     recordedFilters = '';
     imgSrc: './images/mycompute-logo.JPG';
-     
+
     filterResults(): void {
      //   this.listFilters =  this.listFilters + ' ' + this.listFilters ;
      this.recordedFilters = this.recordedFilters + this.listFilters;

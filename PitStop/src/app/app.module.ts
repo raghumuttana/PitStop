@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -27,6 +27,7 @@ import { FiltersComponent } from '../buildreports/shared/filters/filters.compone
     FiltersComponent
   ],
   imports: [
+    Router,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -36,6 +37,10 @@ import { FiltersComponent } from '../buildreports/shared/filters/filters.compone
         {path: 'buildreport/:id', component: ProgressTrackerComponent},
         {path: 'progresstracker', component: BuildReportComponent},
         {path: '', redirectTo: 'buildsummary', pathMatch: 'full'},
+        {path: 'featuredapps', component: FeaturedListComponent},
+        {path: 'basictools', component: BasicToolsComponent},
+        {path: 'appslist', component: ApplicationListComponent},
+        {path: 'feedback', component: FeedBackComponent},
         {path: '**', component: BuildSummaryComponent}
     ], {useHash: true})
   ],

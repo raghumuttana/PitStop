@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-progresstracker',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ProgressTrackerComponent implements OnInit {
-    constructor() { }
+    constructor(private _route: ActivatedRoute,
+                private _router: Router) {
+     }
+    selectedWorkFlow = '';
+    onBack(): void {
+        this._router.navigate(['/buildreport']);
+    }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.selectedWorkFlow  = this._route.snapshot.paramMap.get('id');
+    }
 }
