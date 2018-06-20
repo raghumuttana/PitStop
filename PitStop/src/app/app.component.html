@@ -21,14 +21,9 @@
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- <ul class="navbar-nav">
-                        <li><a [routerLink]="['/buildsummary']">ICP Build Summary</a></li>
-                        <li><a [routerLink]="['/buildreport']">ICP Build Details</a></li>
-                        <
-                </ul> -->
+        <div class="collapse navbar-collapse" id="navbarNav">               
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/buildsummary']">Summary </a>
                 </li>
                 <li class="nav-item">
@@ -37,7 +32,7 @@
                 <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/progresstracker']">Workflow Progress</a>
                 </li>           
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/featuredapps']">Featured Applications</a>
                 </li>     
                 <li class="nav-item">
@@ -45,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/appslist']">Applications</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/feedback']">feedback</a>
                 </li>

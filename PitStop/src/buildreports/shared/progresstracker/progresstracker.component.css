@@ -398,3 +398,6 @@
   .anim-path .progress-step.is-complete::after {
     background-position: -100% 100%;
   }
+  a{
+    color: white;
+  }

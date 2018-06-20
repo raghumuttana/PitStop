@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -27,7 +27,6 @@ import { FiltersComponent } from '../buildreports/shared/filters/filters.compone
     FiltersComponent
   ],
   imports: [
-    Router,
     BrowserModule,
     FormsModule,
     HttpModule,

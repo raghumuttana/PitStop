@@ -11,7 +11,7 @@ export class ProgressTrackerComponent implements OnInit {
     constructor(private _route: ActivatedRoute,
                 private _router: Router) {
      }
-    selectedWorkFlow = '';
+     selectedWorkFlow = '';
     onBack(): void {
         this._router.navigate(['/buildreport']);
     }
