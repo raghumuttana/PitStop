@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { FeaturedListComponent } from '../offerings/featured-list.component';
+import { FeaturedListComponent } from '../offerings/featuredlist/featured-list.component';
 import { BasicToolsComponent } from '../offerings/customOfferings/basictools/basictools.component';
 import { ApplicationListComponent } from '../offerings/customOfferings/applications/applications.component';
 import { FeedBackComponent } from '../feedback/feedback.component';
