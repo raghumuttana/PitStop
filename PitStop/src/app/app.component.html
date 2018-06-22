@@ -1,77 +1,75 @@
-<div> 
-    <!-- <div>
-        <app-featuredlist>
-            
-        </app-featuredlist>
-    </div> -->
-    <!-- <div>
-        <app-basictools>
-        
-        </app-basictools>
-    </div> -->
-    <!-- <app-applications>
-
-    </app-applications> -->
-    <!-- <app-feedback>
-
-    </app-feedback> -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">ICP Build Report</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">               
-            <ul class="navbar-nav">
-                <!-- <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/buildsummary']">Summary </a>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+            <i class="fa fa-gears"></i>        
+        Configuration Management</a>
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="#">My Configs<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/buildreport']">Detail</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/progresstracker']">Workflow Progress</a>
-                </li>            -->
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/featuredapps']">Featured Applications</a>
-                </li>     
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/basictools']">Basic Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/appslist']">Applications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/feedback']">feedback</a>
-                </li>
-            </ul>
-           
-            
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>            -->
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div class="row p-3 h-100">        
+    <div class="col-2 float-left" id="sidebar">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <div class="sidebar mt-3">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                   [routerLink]="['/rawdiskconfig']">Raw Disk Configuration </a>
+                <a class="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                   [routerLink]="['/rawdiskconfig']">File System</a>
+                <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"
+                    [routerLink]="['/clustering']">Add Node the Cluster</a>
+                <a class="list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"
+                [routerLink]="['/sqlserver2014config']">SQL Server 2014 Configuration</a>
+                <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">IIS Configuration</a>
+                <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Install SCCM Applications</a>                
+            </div>
         </div>
-        </nav>
-        <div style="margin:30px;padding: 30px;">
-                <div class="container">
-                        <router-outlet>
-                        </router-outlet>
-                    </div>
-        <!-- <app-buildreport  id="detail" class="collapse"></app-buildreport> -->
-        <!-- <app-buildsummary id="buildsummary" class="collapse"></app-buildsummary> -->
-        <!-- <app-featuredlist id="featuredlist" class="collapse"></app-featuredlist>
-        <app-basictools   id="basictools" class="collapse"></app-basictools>
-        <app-applications id="applications" class="collapse"></app-applications>
-        <app-progresstracker id="workflowprogress" class="collapse"></app-progresstracker> -->
+    </div>
+    <div class="col-9 mt-4">            
+            <router-outlet>
+            </router-outlet>
+    </div>
+    <div class="col-1 h-100">
+        <div class="sticky-top">
+            <button type="button" class="btn btn-primary">Save Payload</button>                
+            <button type="button" class="btn btn-info mt-5">View Payload</button>                
         </div>
-        <!-- <div>
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <a class='navbar-brand'>{{pageTitle}}</a>
-                    <ul class="nav navbar-nav">
-                        <li><a [routerLink]="['/buildsummary']">ICP Build Summary</a></li>
-                        <li><a [routerLink]="['/buildreport']">ICP Build Details</a></li>
-                        
-                    </ul>
-                </div>
-            </nav>
-        </div> -->
-       
+    </div>
 </div>
+<footer class="col-12 fixed-bottom container-fluid">
+    <div class="container border-top" style="height: 50px; background-color: #efefef">
+        <span class="text-muted">
+                JPMC © 2016-2018, For Internal Use Only
+        </span>
+    </div>
+</footer>
+
+<!-- <div> 
+    
+    
+    <div style="margin:30px;padding: 30px;">
+        <div class="container">
+            <router-outlet>
+            </router-outlet>
+    </div>     
+    <div style="background: whitesmoke">
+        <i class="fa fa-gears"></i>        
+    </div>
+</div> --> 

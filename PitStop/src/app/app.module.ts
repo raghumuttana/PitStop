@@ -12,6 +12,9 @@ import { BuildReportComponent } from '../buildreports/buildreport/buildreport.co
 import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary.component';
 import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker/progresstracker.component';
 import { FiltersComponent } from '../buildreports/shared/filters/filters.component';
+import { RawDiskConfigurationComponent } from '../rawdiskconfiguration/rawdiskconfiguration.component';
+import { SqlServer2014ConfigurationComponent } from '../sqlserver2014configuration/sqlserver2014configuration.component';
+import { ClusteringComponent } from '../clustering/clustering.component';
 
 
 @NgModule({
@@ -24,23 +27,24 @@ import { FiltersComponent } from '../buildreports/shared/filters/filters.compone
     BuildReportComponent,
     BuildSummaryComponent,
     ProgressTrackerComponent,
-    FiltersComponent
+    FiltersComponent,
+    SqlServer2014ConfigurationComponent,
+    RawDiskConfigurationComponent,
+    ClusteringComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-        {path: 'buildsummary', component: BuildSummaryComponent},
-        {path: 'buildreport', component: BuildReportComponent},
-        {path: 'buildreport/:id', component: ProgressTrackerComponent},
-        {path: 'progresstracker', component: BuildReportComponent},
-        {path: '', redirectTo: 'buildsummary', pathMatch: 'full'},
         {path: 'featuredapps', component: FeaturedListComponent},
         {path: 'basictools', component: BasicToolsComponent},
         {path: 'appslist', component: ApplicationListComponent},
         {path: 'feedback', component: FeedBackComponent},
-        {path: '**', component: BuildSummaryComponent}
+        {path: 'rawdiskconfig', component: RawDiskConfigurationComponent},
+        {path: 'sqlserver2014config', component: SqlServer2014ConfigurationComponent},
+        {path: 'clustering', component: ClusteringComponent},
+        {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],
   providers: [],
