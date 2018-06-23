@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeviewItem } from 'ngx-treeview';
-import { Tree } from '@angular/router/src/utils/tree';
-
 @Component(
   {
     selector: 'app-root',

@@ -14,21 +14,21 @@ export class ApplicationListComponent implements OnInit {
             applicationName : 'Illumio',
             applicationText : '',
             // tslint:disable-next-line:max-line-length
-            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'            
+            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'
         },
         {
             applicationId : 2,
             applicationName : 'Citrix',
             applicationText : '',
             // tslint:disable-next-line:max-line-length
-            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'            
+            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'
         },
         {
             applicationId : 3,
             applicationName : 'Xen-Desktop',
             applicationText : '',
             // tslint:disable-next-line:max-line-length
-            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'            
+            applicationDescription : 'This bundle has Developer tools like SQL Server, Visual Studio, .NET Framework, Fiddler, Notepadd++. And more detailed description.'
         }
     ];
     ngOnInit() { }
