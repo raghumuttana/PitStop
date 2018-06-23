@@ -27,16 +27,137 @@
 <div class="row p-3 h-100">        
     <div class="col-2 float-left" id="sidebar">
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
-        <div class="sidebar mt-3">
-            <div class="list-group" id="list-tab" role="tablist">
+
+
+
+        <!-- <div class="list-group panel mt-3 text-capitalize">
+                <a href="#serverRoleItems" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">server role <i class="fa fa-caret-down"></i></a>
+                <div class="collapse" id="serverRoleItems">
+                    <a class="list-group-item" id="rawdiskconfiguration" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                    [routerLink]="['/rawdiskconfig']">Raw Disk Configuration </a>
+                
+                    <a class="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                    [routerLink]="['/rawdiskconfig']">File System</a>  
+                    
+                    <a class="list-group-item" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"
+                    [routerLink]="['/sqlserver2014config']">SQL Server 2014 Configuration</a> 
+                    <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Subitem 1 <i class="fa fa-caret-down"></i></a>
+                    <div class="collapse list-group-submenu" id="SubMenu1">
+                    <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+                    <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a>
+                    <a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1">Subitem 3 c <i class="fa fa-caret-down"></i></a>
+                    <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu1">
+                      <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 1</a>
+                      <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Sub sub item 2</a>
+                    </div>
+                    <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 4 d</a>
+                  </div>                  
+                </div>
+                <a href="#demo4" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">Item 4  <i class="fa fa-caret-down"></i></a>
+                <div class="collapse" id="demo4">
+                  <a href="" class="list-group-item">Subitem 1</a>
+                  <a href="" class="list-group-item">Subitem 2</a>
+                  <a href="" class="list-group-item">Subitem 3</a>
+                </div>
+              </div>
+           -->
+        
+    <!-- <nav id="sidebar">
+        <div>
+            <h5 class="mt-2">Offerings</h5>
+        </div>   
+        <ul class="list-unstyled components mt-2">                    
+            <li class="mt-2">
+                <a href="#serverRoleSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Server Role</a>
+                <ul class="collapse list-unstyled" id="serverRoleSubmenu">
+                    <li>
+                        <a id="rawdiskconfiguration" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                            [routerLink]="['/rawdiskconfig']">Raw Disk Configuration </a>
+                    </li>
+                    <li>
+                        <a id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
+                            [routerLink]="['/rawdiskconfig']">File System</a>                        
+                    </li> 
+                    <li>
+                        <a data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"
+                            [routerLink]="['/sqlserver2014config']">SQL Server 2014 Configuration</a>                    
+                    </li> 
+                    <li>
+                        <a href="#clusteringSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Clustering</a>
+                        <ul class="collapse list-unstyled" id="clusteringSubMenu">
+                            <li>
+                                <a  data-toggle="list" ref="#list-messages" role="tab" aria-controls="messages"
+                                    [routerLink]="['/clustering']">Add Node to Cluster</a>    
+                                <a data-toggle="list" ref="#list-messages" role="tab" aria-controls="messages"
+                                 [routerLink]="['/clustering']">Create Cluster</a>                
+                            </li>
+                            <li>
+                                          
+                            </li>
+                        </ul>    
+                    </li>  
+                    
+                    
+                </ul>
+            </li>            
+            <li class="mt-2">
+                <a href="#dscSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">DSC Configuration</a>
+                <ul class="collapse list-unstyled" id="dscSubMenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>            
+        </ul>   
+    </nav> -->
+    
+        <!-- <div class="menu-list">        
+            <ul>
+                <li>
+                    Server role
+                    <ul>
+                        <li>SQL Configuration</li>
+                        <li>IIS Configuration</li>
+                        <li>
+                            Clustering
+                            <ul>
+                                <li>Add Node to Cluster</li>
+                                <li>Create New Cluster</li>
+                            </ul>
+                        </li>
+
+                        <li>SOME CONFIG2</li>
+                        <li>SOME OTHER CONFIG1</li>
+                        <li>SOME OTHER CONFIG2</li>
+                    </ul>
+                </li>
+                <li>
+                    DSC Configuration
+                    <ul>
+                        <li>Upload DSC</li>
+                        <li>Create new DSC</li>
+                    </ul>
+                </li>
+            
+            </ul>
+        </div> -->
+        
+        <div class="sidebar mt-3"> 
+            <div class="list-group" >
                 <a class="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
-                   [routerLink]="['/rawdiskconfig']">Raw Disk Configuration </a>
+                    [routerLink]="['/rawdiskconfig']">Raw Disk Configuration </a>
                 <a class="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"
-                   [routerLink]="['/rawdiskconfig']">File System</a>
+                    [routerLink]="['/rawdiskconfig']">File System</a>
                 <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"
                     [routerLink]="['/clustering']">Add Node the Cluster</a>
                 <a class="list-group-item" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"
-                [routerLink]="['/sqlserver2014config']">SQL Server 2014 Configuration</a>
+                    [routerLink]="['/sqlserver2014config']">SQL Server 2014 Configuration</a>
                 <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">IIS Configuration</a>
                 <a class="list-group-item" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Install SCCM Applications</a>                
             </div>
