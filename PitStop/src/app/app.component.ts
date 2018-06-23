@@ -3,7 +3,8 @@ import { TreeviewItem } from 'ngx-treeview';
 @Component(
   {
     selector: 'app-root',
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
   }
 )
 export class AppComponent implements OnInit {
@@ -17,11 +18,11 @@ export class AppComponent implements OnInit {
   pageTitle = 'ICP Build Report';
   items: any[];
   ngOnInit() {
-    this.items =  this.getBooks();
+    this.items =  this.getCategories();
 }
 
 
-getBooks(): TreeviewItem[] {
+getCategories(): TreeviewItem[] {
   const childrenCategory = new TreeviewItem({
       text: 'Server Role', value: 1, checked: false, collapsed: false, children: [
           { text: 'Raw Disk Configuration', checked: false, value: 11 },
