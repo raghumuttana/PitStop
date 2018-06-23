@@ -15,7 +15,7 @@ import { FiltersComponent } from '../buildreports/shared/filters/filters.compone
 import { RawDiskConfigurationComponent } from '../rawdiskconfiguration/rawdiskconfiguration.component';
 import { SqlServer2014ConfigurationComponent } from '../sqlserver2014configuration/sqlserver2014configuration.component';
 import { ClusteringComponent } from '../clustering/clustering.component';
-
+import { TreeviewModule } from 'ngx-treeview';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { ClusteringComponent } from '../clustering/clustering.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    TreeviewModule.forRoot(),
     RouterModule.forRoot([
         {path: 'featuredapps', component: FeaturedListComponent},
         {path: 'basictools', component: BasicToolsComponent},

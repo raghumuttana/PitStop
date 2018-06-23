@@ -20,7 +20,6 @@ export class FiltersComponent implements OnInit {
                 private _durationService: DurationService,
                 private _environmentService: EnvironmentsService) {
     }
-    
     dataCentersList: any[] = [
         {
             datacenterId  : 1,
