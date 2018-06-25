@@ -21,6 +21,8 @@
         </form>
     </div>
 </nav>
+<app-breadcrumbs class="m-3">
+</app-breadcrumbs>
 <div class="wrapper row wrapper">        
     <div class="col-2" id="sidebar">
     <nav id="sidebar" style="padding:1px;" class="border-right">      
@@ -32,7 +34,7 @@
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>                            
-                        <a href="#">
+                        <a [routerLink]="['/rawdiskconfig']">
                             <i class="fas fa-compact-disc"></i>
                             Raw Disk Configuration                            
                         </a>
@@ -44,12 +46,12 @@
                         </a>
                         <ul class="collapse list-unstyled" id="clusteringOptions">
                                 <li>
-                                    <a href="#" [routerLink]="['/clustering']">
+                                    <a [routerLink]="['/addnodetocluster']">
                                         <i class="fas fa-plus"></i>
                                         Add Node To Cluster</a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a [routerLink]="['/createcluster']">
                                         <i class="fas fa-object-group"></i>
                                         Create Cluster</a>
                                 </li>                                     
@@ -125,7 +127,7 @@
             </div>
         </div> -->
     </div>
-    <div class="col-9 mt-4">            
+    <div class="col-9">            
             <router-outlet>
             </router-outlet>
     </div>
