@@ -1,32 +1,39 @@
-<form class="pt-5 m-5">
-    <div class="form-group row">
-        <label for="blockSizeList" class="col-sm-2 col-form-label">Block Size List</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="blockSizeList" placeholder="4">
-        </div>
+<div>
+    <div class="card-body">
+        <h5 class="card-title">Raw Disck Configuration</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Set up up Raw partitions disks on servers when new disks are added to the windows system.</h6>        
+        <form class="m-4">        
+            <div class="form-group row">
+                <label for="blockSizeList" class="col-sm-2 col-form-label">Block Size List</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="blockSizeList" placeholder="4">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="driveLetterList" class="col-sm-2 col-form-label">Drive Letter List</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="driveLetterList" placeholder="E">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="driveLetterList" class="col-sm-2 col-form-label">Label List</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="labelList" placeholder="Data">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="driveLetterList" class="col-sm-2 col-form-label">Size List</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sizeList" placeholder="50">
+                </div>
+            </div>            
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    {{form.pristine}}
+                <button type="submit" class="btn btn-primary">Add To Payload</button>
+                </div>
+            </div>
+            
+        </form>        
     </div>
-    <div class="form-group row">
-        <label for="driveLetterList" class="col-sm-2 col-form-label">Drive Letter List</label>
-        <div class="col-sm-10">
-        <input type="text" class="form-control" id="driveLetterList" placeholder="E">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="driveLetterList" class="col-sm-2 col-form-label">Label List</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="labelList" placeholder="Data">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="driveLetterList" class="col-sm-2 col-form-label">Size List</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="sizeList" placeholder="50">
-        </div>
-    </div>
-    
-    <div class="form-group row">
-        <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Add To Payload</button>
-        </div>
-    </div>
-</form>
+</div>

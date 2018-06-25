@@ -18,6 +18,8 @@ import {  AddToClusterComponent } from '../clustering/addnodetocluster/addtoclus
 import { TreeviewModule } from 'ngx-treeview';
 import { CreateClusterComponent } from '../clustering/createcluster/createcluster.component';
 import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
+import { CreateDSCComponent } from '../dsc/createdsc/createdsc.component';
+import { MyOrdersComponent } from '../myorders/myorders.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
     RawDiskConfigurationComponent,
     AddToClusterComponent,
     CreateClusterComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    CreateDSCComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,8 @@ import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
         {path: 'sqlserver2014config', component: SqlServer2014ConfigurationComponent},
         {path: 'addnodetocluster', component: AddToClusterComponent},
         {path: 'createcluster', component: CreateClusterComponent},
+        {path: 'createdsc', component: CreateDSCComponent},
+        {path: 'myorders', component: MyOrdersComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],
