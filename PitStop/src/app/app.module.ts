@@ -14,7 +14,7 @@ import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker
 import { FiltersComponent } from '../buildreports/shared/filters/filters.component';
 import { RawDiskConfigurationComponent } from '../rawdiskconfiguration/rawdiskconfiguration.component';
 import { SqlServer2014ConfigurationComponent } from '../sqlserver2014configuration/sqlserver2014configuration.component';
-import { ClusteringComponent } from '../clustering/clustering.component';
+import {  AddToClusterComponent } from '../clustering/addnodetocluster/addtocluster.component';
 import { TreeviewModule } from 'ngx-treeview';
 
 @NgModule({
@@ -30,7 +30,7 @@ import { TreeviewModule } from 'ngx-treeview';
     FiltersComponent,
     SqlServer2014ConfigurationComponent,
     RawDiskConfigurationComponent,
-    ClusteringComponent
+    AddToClusterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,7 @@ import { TreeviewModule } from 'ngx-treeview';
         {path: 'feedback', component: FeedBackComponent},
         {path: 'rawdiskconfig', component: RawDiskConfigurationComponent},
         {path: 'sqlserver2014config', component: SqlServer2014ConfigurationComponent},
-        {path: 'clustering', component: ClusteringComponent},
+        {path: 'clustering', component: AddToClusterComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],
