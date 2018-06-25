@@ -1,0 +1,71 @@
+<div class="row m-3">    
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
+        <h4>Order ID: {{selectedOrder}}</h4>            
+        <ul class="progress-tracker progress-tracker--center">
+            <li class="progress-step is-complete">
+                <span class="progress-marker"></span>
+                <span class="progress-text">
+                    <h4 class="progress-title">myCompute</h4>                            
+                    <table class="table"  >
+                        <tr>Total: <span class="badge badge-info"><a [routerLink]="['/buildreport']">25</a></span></tr>
+                        <tr>Success: <span class="badge badge-success">25</span></tr>
+                        <tr>Failed: <span class="badge badge-danger">0</span></tr>
+                        <tr>Unknown: <span class="badge badge-dark">0</span></tr>
+                    </table>
+                </span>                    
+            </li>
+            <li class="progress-step is-complete">
+                <span class="progress-marker"></span>
+                <span class="progress-text">
+                    <h4 class="progress-title">Magister</h4>   
+                    <table class="table"  >
+                        <tr>Total: <span class="badge badge-info">24</span></tr>
+                        <tr>Success: <span class="badge badge-success">21</span></tr>
+                        <tr>Failed: <span class="badge badge-danger">3</span></tr>
+                        <tr>Unknown: <span class="badge badge-dark">1</span></tr>
+                    </table>                 
+                </span>
+            </li>
+            <li class="progress-step is-active">
+                <span class="progress-marker"></span>
+                <span class="progress-text">
+                    <h4 class="progress-title">VMS</h4>    
+                    <table class="table"  >
+                        <tr>Total: <span class="badge badge-info">20</span></tr>
+                        <tr>Success: <span class="badge badge-success">16</span></tr>
+                        <tr>Failed: <span class="badge badge-danger">3</span></tr>
+                        <tr>Unknown: <span class="badge badge-dark">1</span></tr>
+                    </table>                         
+                </span>
+            </li>
+            <li class="progress-step">
+                    <span class="progress-marker"></span>
+                    <span class="progress-text">
+                        <h4 class="progress-title">Windows</h4>  
+                        <table class="table"  >
+                            <tr>Total: <span class="badge badge-info">-</span></tr>
+                            <tr>Success: <span class="badge badge-success">-</span></tr>
+                            <tr>Failed: <span class="badge badge-danger">-</span></tr>
+                            <tr>Unknown: <span class="badge badge-dark">-</span></tr>
+                        </table>                           
+                    </span>
+                </li>
+            <li class="progress-step">
+                <span class="progress-marker"></span>
+                <span class="progress-text">
+                    <h4 class="progress-title">Windows SCV</h4>  
+                    <table class="table"  >
+                        <tr>Total: <span class="badge badge-info">-</span></tr>
+                        <tr>Success: <span class="badge badge-success">-</span></tr>
+                        <tr>Failed: <span class="badge badge-danger">-</span></tr>
+                        <tr>Unknown: <span class="badge badge-dark">-</span></tr>
+                    </table>                           
+                </span>
+            </li>
+        </ul>                
+        <div>    
+            <button class="btn btn-primary" (click)='onBack()'> 
+                <i class="fas fa-angle-left"></i> Back</button>                            
+        </div> 
+    </div>
+</div>

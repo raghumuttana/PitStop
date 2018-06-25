@@ -8,10 +8,6 @@ import { FeaturedListComponent } from '../offerings/featuredlist/featured-list.c
 import { BasicToolsComponent } from '../offerings/customOfferings/basictools/basictools.component';
 import { ApplicationListComponent } from '../offerings/customOfferings/applications/applications.component';
 import { FeedBackComponent } from '../feedback/feedback.component';
-import { BuildReportComponent } from '../buildreports/buildreport/buildreport.component';
-import { BuildSummaryComponent } from '../buildreports/buildsummary/buildsummary.component';
-import { ProgressTrackerComponent } from '../buildreports/shared/progresstracker/progresstracker.component';
-import { FiltersComponent } from '../buildreports/shared/filters/filters.component';
 import { RawDiskConfigurationComponent } from '../rawdiskconfiguration/rawdiskconfiguration.component';
 import { SqlServer2014ConfigurationComponent } from '../sqlserver2014configuration/sqlserver2014configuration.component';
 import {  AddToClusterComponent } from '../clustering/addnodetocluster/addtocluster.component';
@@ -20,6 +16,7 @@ import { CreateClusterComponent } from '../clustering/createcluster/createcluste
 import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
 import { CreateDSCComponent } from '../dsc/createdsc/createdsc.component';
 import { MyOrdersComponent } from '../myorders/myorders.component';
+import { ProgressTrackerComponent } from '../shared/progresstracker/progresstracker.component';
 
 @NgModule({
   declarations: [
@@ -28,17 +25,14 @@ import { MyOrdersComponent } from '../myorders/myorders.component';
     BasicToolsComponent,
     ApplicationListComponent,
     FeedBackComponent,
-    BuildReportComponent,
-    BuildSummaryComponent,
-    ProgressTrackerComponent,
-    FiltersComponent,
     SqlServer2014ConfigurationComponent,
     RawDiskConfigurationComponent,
     AddToClusterComponent,
     CreateClusterComponent,
     BreadcrumbsComponent,
     CreateDSCComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    ProgressTrackerComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +50,7 @@ import { MyOrdersComponent } from '../myorders/myorders.component';
         {path: 'createcluster', component: CreateClusterComponent},
         {path: 'createdsc', component: CreateDSCComponent},
         {path: 'myorders', component: MyOrdersComponent},
+        {path: 'myorders/:id', component: ProgressTrackerComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],

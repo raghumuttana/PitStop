@@ -11,12 +11,12 @@ export class ProgressTrackerComponent implements OnInit {
     constructor(private _route: ActivatedRoute,
                 private _router: Router) {
      }
-     selectedWorkFlow = '';
+     selectedOrder = '';
     onBack(): void {
-        this._router.navigate(['/buildreport']);
+        this._router.navigate(['/myorders']);
     }
 
     ngOnInit() {
-        this.selectedWorkFlow  = this._route.snapshot.paramMap.get('id');
+        this.selectedOrder  = this._route.snapshot.paramMap.get('id');
     }
 }
