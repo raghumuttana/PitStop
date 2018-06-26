@@ -56,8 +56,9 @@ a, a:hover, a:focus {
 
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 250px;    
+    max-height: 800px;
+    overflow: auto;
     background: #fff;    
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -99,7 +100,6 @@ a, a:hover, a:focus {
 a[data-toggle="collapse"] {
     position: relative;
 }
-
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -107,18 +107,16 @@ a[data-toggle="collapse"] {
     right: 20px;
     transform: translateY(-50%);
 }
-
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #f8f9fa;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
- 
+} 
 #clusteringOptions {
+    padding-left: 15px;
+    
+} 
+#sccm {
     padding-left: 15px;
     
 }
