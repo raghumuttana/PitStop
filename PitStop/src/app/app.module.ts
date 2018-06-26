@@ -18,6 +18,7 @@ import { CreateDSCComponent } from '../dsc/createdsc/createdsc.component';
 import { MyOrdersComponent } from '../myorders/myorders.component';
 import { ProgressTrackerComponent } from '../shared/progresstracker/progresstracker.component';
 import { CartComponent } from '../cart/cart.component';
+import { CheckoutComponent } from '../checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CartComponent } from '../cart/cart.component';
     CreateDSCComponent,
     MyOrdersComponent,
     ProgressTrackerComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +54,9 @@ import { CartComponent } from '../cart/cart.component';
         {path: 'createcluster', component: CreateClusterComponent},
         {path: 'createdsc', component: CreateDSCComponent},
         {path: 'myorders', component: MyOrdersComponent},
-        {path: 'myorders/:id', component: ProgressTrackerComponent},
         {path: 'cart', component: CartComponent},
+        {path: 'checkout', component: CheckoutComponent},
+        {path: 'myorders/:id', component: ProgressTrackerComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],
