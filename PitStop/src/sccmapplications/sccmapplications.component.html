@@ -1,0 +1,30 @@
+<form #form="ngForm" (submit)="submitForm(form)" novalidate>
+    <h5 class="card-title">{{sccmApplicationListHeading}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Choose from below:</h6>        
+    <div class="form-group">            
+        <div *ngIf="sccmApplicationsList">
+            <div *ngFor="let applicationItem of sccmApplicationsList; let k = index" class="checkbox">                
+                <div class="form-check">                
+                    <label>
+                        <input type="checkbox" class="form-check-input"  value="{{applicationItem.ApplicationTitle}}" name="{{k}}"  
+                        [checked]="(selectedApplications && (-1 !== selectedApplications.indexOf(applicationItem.ApplicationTitle)) ? 'checked' : '')" 
+                        (change) ="updateSelectedSccmApplications($event)" />{{applicationItem.ApplicationTitle}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-3">
+    <button type="submit" class="btn btn-primary text-capitalize">add to config</button>
+    </div> 
+    <!-- <div class="m-5">            
+            Model: {{model | json}}
+            <hr>
+            Angular: {{form.value | json}}
+            <hr>
+            {{form.pristine}}
+        </div> -->
+
+</form>

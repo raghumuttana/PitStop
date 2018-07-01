@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { TreeviewItem } from 'ngx-treeview';
+import { SccmApplicationsService } from '../sccmapplications/sccmapplications.service';
+import { MyConfigService } from '../myconfig/myconfig.service';
 @Component(
   {
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    providers: [SccmApplicationsService,
+                MyConfigService]
   }
 )
 export class AppComponent implements OnInit {
+  constructor(private _myconfigService: MyConfigService){
+
+  }
   config = {
     hasAllCheckBox: false,
     hasFilter: true,
@@ -21,6 +28,9 @@ export class AppComponent implements OnInit {
     this.items =  this.getCategories();
 }
 
+get configCount(): number {
+  return this._myconfigService.selectedSccmApplications.length;
+}
 
 getCategories(): TreeviewItem[] {
   const childrenCategory = new TreeviewItem({

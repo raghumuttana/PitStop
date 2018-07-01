@@ -2,37 +2,44 @@
     <div class="card-body">
         <h5 class="card-title">Raw Disk Configuration</h5>
         <h6 class="card-subtitle mb-2 text-muted">Set up up Raw partitions disks on servers when new disks are added to the windows system.</h6>        
-        <form class="m-4" #form="ngForm" novalidate>        
+        <form class="m-4" #form="ngForm" (submit)="submitForm(form)"  novalidate>        
             <div class="form-group row">
                 <label for="blockSizeList" class="col-sm-2 col-form-label">Block Size List</label>
                 <div class="col-sm-10">
-                <input type="text" required class="form-control" required  id="blockSizeList" placeholder="4">
+                <input type="text" class="form-control" name="blockSizeList" placeholder="4" [(ngModel)]="model.blockSizeList">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="driveLetterList" class="col-sm-2 col-form-label">Drive Letter List</label>
                 <div class="col-sm-10">
-                <input type="text" required class="form-control" required id="driveLetterList" placeholder="E">
+                <input type="text" class="form-control"  name="driveLetterList" placeholder="E" (ngModel)="model.driveLetterList" 
+                    (ngModelChange) = "ToUpperCaseDriveLetters($event)">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="driveLetterList" class="col-sm-2 col-form-label">Label List</label>
+                <label for="labelList" class="col-sm-2 col-form-label">Label List</label>
                 <div class="col-sm-10">
-                    <input type="text" required class="form-control" required id="labelList" placeholder="Data">
+                    <input type="text" class="form-control"  name="labelList" placeholder="Data" [(ngModel)]="model.labelList">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="driveLetterList" class="col-sm-2 col-form-label">Size List</label>
+                <label for="sizeList" class="col-sm-2 col-form-label">Size List</label>
                 <div class="col-sm-10">
-                    <input type="text" required class="form-control" required id="sizeList" placeholder="50">
+                    <input type="text" class="form-control"  name="sizeList" placeholder="50" [(ngModel)]="model.sizeList">
                 </div>
             </div>            
             <div class="form-group row">
                 <div class="col-sm-10">                    
-                <button class="btn btn-primary text-capitalize" [routerLink]="['/cart']">add to cart</button>
+                <button class="btn btn-primary text-capitalize" (onclick)='submitDiskConfig()' >add to config</button>
             </div>
             </div>
             
+            <div class="m-5">
+                {{form.pristine}}
+                Model: {{model | json}}
+                <hr>
+                Angular: {{form.value | json}}
+            </div>
         </form>        
     </div>
 </div>

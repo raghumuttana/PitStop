@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FeaturedListComponent } from '../offerings/featuredlist/featured-list.component';
 import { BasicToolsComponent } from '../offerings/customOfferings/basictools/basictools.component';
-import { ApplicationListComponent } from '../offerings/customOfferings/applications/applications.component';
 import { FeedBackComponent } from '../feedback/feedback.component';
 import { RawDiskConfigurationComponent } from '../rawdiskconfiguration/rawdiskconfiguration.component';
 import { SqlServer2014ConfigurationComponent } from '../sqlserver2014configuration/sqlserver2014configuration.component';
@@ -17,16 +16,18 @@ import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
 import { CreateDSCComponent } from '../dsc/createdsc/createdsc.component';
 import { MyOrdersComponent } from '../myorders/myorders.component';
 import { ProgressTrackerComponent } from '../shared/progresstracker/progresstracker.component';
-import { CartComponent } from '../cart/cart.component';
 import { CheckoutComponent } from '../checkout/checkout.component';
-import { DscblocksComponent } from './dscblocks/dscblocks.component';
+import { DscblocksComponent } from '../dscblocks/dscblocks.component';
+import { SccmApplicationListComponent } from '../sccmapplications/sccmapplications.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MyConfigComponent } from '../myconfig/myconfig.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeaturedListComponent,
     BasicToolsComponent,
-    ApplicationListComponent,
+    SccmApplicationListComponent,
     FeedBackComponent,
     SqlServer2014ConfigurationComponent,
     RawDiskConfigurationComponent,
@@ -36,7 +37,7 @@ import { DscblocksComponent } from './dscblocks/dscblocks.component';
     CreateDSCComponent,
     MyOrdersComponent,
     ProgressTrackerComponent,
-    CartComponent,
+    MyConfigComponent,
     CheckoutComponent,
     DscblocksComponent
   ],
@@ -44,11 +45,12 @@ import { DscblocksComponent } from './dscblocks/dscblocks.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     TreeviewModule.forRoot(),
     RouterModule.forRoot([
         {path: 'featuredapps', component: FeaturedListComponent},
         {path: 'basictools', component: BasicToolsComponent},
-        {path: 'appslist', component: ApplicationListComponent},
+        {path: 'sccmappslist', component: SccmApplicationListComponent},
         {path: 'feedback', component: FeedBackComponent},
         {path: 'rawdiskconfig', component: RawDiskConfigurationComponent},
         {path: 'sqlserver2014config', component: SqlServer2014ConfigurationComponent},
@@ -56,7 +58,7 @@ import { DscblocksComponent } from './dscblocks/dscblocks.component';
         {path: 'createcluster', component: CreateClusterComponent},
         {path: 'createdsc', component: CreateDSCComponent},
         {path: 'myorders', component: MyOrdersComponent},
-        {path: 'cart', component: CartComponent},
+        {path: 'myconfig', component: MyConfigComponent},
         {path: 'checkout', component: CheckoutComponent},
         {path: 'dscblocks', component: DscblocksComponent},
         {path: 'myorders/:id', component: ProgressTrackerComponent},

@@ -1,0 +1,24 @@
+<div>
+<h5>My Config. </h5>
+<h6>Please drag and drop the configuration tiles to suit the right order for you.</h6>
+    <div class="card-deck" *ngIf="showConfigCart">
+        <div >        
+            <div *ngFor="let configItem of configItems; let k = index" class="list-group">    
+                <div class="list-group-item">                    
+                        <span class="text-info">{{configItem.Category}}</span> <span> - </span> <span>{{configItem.Payload}}</span>
+                        <div>
+                            <a href="#" class="card-link">Remove</a>                           
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <button type="button" class="btn btn-primary text-capitalize"
+            [routerLink]="['/checkout']">proceed to save</button>
+    </div>
+    <div class="mt-3">
+        <button type="button" class="btn btn-info text-capitalize"
+            [routerLink]="['/']">save for later</button>
+    </div>
+</div>
