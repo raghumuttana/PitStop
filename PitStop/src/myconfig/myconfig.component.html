@@ -1,5 +1,5 @@
 <div>
-<h5>My Config. </h5>
+<!-- <h5>My Config. </h5>
 <h6>Please drag and drop the configuration tiles to suit the right order for you.</h6>
     <div class="card-deck" *ngIf="showConfigCart">
         <div >        
@@ -12,7 +12,18 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
+<div> 
+    <ngx-sortable [items]="configItems" [name]="'My Configuration'" [listStyle]="listStyle" (listSorted)="listSorted($event)">
+        <ng-template let-item>
+            <div class="sortable-list-item">
+               <p class="flow-text text-info">{{item.Category}}</p>
+               <p style="font-size:.75em;"><span>Payload: {{item.Payload}}</span></p> 
+            </div>
+        </ng-template>
+    </ngx-sortable>
+</div>
+
     <div class="mt-5">
         <button type="button" class="btn btn-primary text-capitalize"
             [routerLink]="['/checkout']">proceed to save</button>

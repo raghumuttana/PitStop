@@ -5,11 +5,26 @@ import { RawDiskConfiguration } from '../rawdiskconfiguration/rawdiskconfigurati
 
 @Component({
     selector: 'app-myconfig',
-    templateUrl: 'myconfig.component.html'
+    templateUrl: 'myconfig.component.html',
+    styleUrls: ['./myconfig.component.css']
 })
 
 export class MyConfigComponent implements OnInit {
     configItems: any[] = [];
+
+    config = {
+        displayKey: 'Category', //if objects array passed which key to be displayed defaults to description
+        search: true,
+      };
+
+    firstSortedList: any;
+    secondSortedList: any;
+    listStyle = {
+        height: '350px',
+        width: '100%',
+        padding: '5px',
+        dropZoneHeight: '100px'
+    };
 
     get showConfigCart(): boolean {
         return this.configItems.length > 0;
@@ -18,7 +33,17 @@ export class MyConfigComponent implements OnInit {
     constructor(public _myconfigService: MyConfigService) {
         this.buildSccmAppsPayload();
         this.buildRawDiskConfiguration();
+        this.firstSortedList = this.configItems;
+        this.secondSortedList = this.configItems;
     }
+
+    listSorted(list: any) {
+        this.firstSortedList = list;
+      }
+
+      listSortedSecond(list: any) {
+        this.secondSortedList = list;
+      }
 
     ngOnInit() {}
 
@@ -31,7 +56,7 @@ export class MyConfigComponent implements OnInit {
         }
     }
     buildRawDiskConfiguration(): void {
-        if(this._myconfigService.rawDiskConfiguration != undefined) {
+        if (this._myconfigService.rawDiskConfiguration !== undefined) {
         if ((this._myconfigService.rawDiskConfiguration.blockSizeList !== '') ||
             (this._myconfigService.rawDiskConfiguration.driveLetterList !== '') ||
             (this._myconfigService.rawDiskConfiguration.labelList !== '') ||
@@ -42,4 +67,5 @@ export class MyConfigComponent implements OnInit {
             }
         }
     }
+
 }

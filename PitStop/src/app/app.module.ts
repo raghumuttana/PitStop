@@ -21,6 +21,8 @@ import { DscblocksComponent } from '../dscblocks/dscblocks.component';
 import { SccmApplicationListComponent } from '../sccmapplications/sccmapplications.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MyConfigComponent } from '../myconfig/myconfig.component';
+import { DndModule } from 'ng2-dnd';
+import { NgxSortableModule } from 'ngx-sortable';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { MyConfigComponent } from '../myconfig/myconfig.component';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    NgxSortableModule,
+    DndModule.forRoot(),
     TreeviewModule.forRoot(),
     RouterModule.forRoot([
         {path: 'featuredapps', component: FeaturedListComponent},

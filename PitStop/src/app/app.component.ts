@@ -12,7 +12,7 @@ import { MyConfigService } from '../myconfig/myconfig.service';
   }
 )
 export class AppComponent implements OnInit {
-  constructor(private _myconfigService: MyConfigService){
+  constructor(private _myconfigService: MyConfigService) {
 
   }
   config = {
