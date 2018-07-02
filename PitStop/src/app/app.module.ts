@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyConfigComponent } from '../myconfig/myconfig.component';
 import { DndModule } from 'ng2-dnd';
 import { NgxSortableModule } from 'ngx-sortable';
+import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvironmentdetails.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { NgxSortableModule } from 'ngx-sortable';
     ProgressTrackerComponent,
     MyConfigComponent,
     CheckoutComponent,
-    DscblocksComponent
+    DscblocksComponent,
+    AppenvironmentdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ import { NgxSortableModule } from 'ngx-sortable';
         {path: 'checkout', component: CheckoutComponent},
         {path: 'dscblocks', component: DscblocksComponent},
         {path: 'myorders/:id', component: ProgressTrackerComponent},
+        {path: 'appenvironmentdetails', component: AppenvironmentdetailsComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],

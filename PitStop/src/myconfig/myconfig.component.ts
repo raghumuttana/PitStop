@@ -13,7 +13,7 @@ export class MyConfigComponent implements OnInit {
     configItems: any[] = [];
 
     config = {
-        displayKey: 'Category', //if objects array passed which key to be displayed defaults to description
+        displayKey: 'Category',
         search: true,
       };
 
