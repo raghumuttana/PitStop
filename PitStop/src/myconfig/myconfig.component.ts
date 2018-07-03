@@ -51,7 +51,7 @@ export class MyConfigComponent implements OnInit {
         if (this._myconfigService.selectedSccmApplications.length > 0) {
 
         const payload = JSON.stringify( this._myconfigService.selectedSccmApplications);
-        const sccmItem = new ConfigItem('Install SCCM Applications:  ', payload);
+        const sccmItem = new ConfigItem('Install SCCM Applications', payload);
         this.configItems.push(sccmItem);
         }
     }
@@ -62,7 +62,7 @@ export class MyConfigComponent implements OnInit {
             (this._myconfigService.rawDiskConfiguration.labelList !== '') ||
             (this._myconfigService.rawDiskConfiguration.sizeList !== '')) {
             const payload = JSON.stringify( this._myconfigService.rawDiskConfiguration);
-            const sccmItem = new ConfigItem('Raw Disk Config: ', payload);
+            const sccmItem = new ConfigItem('Raw Disk Configuration', payload);
             this.configItems.push(sccmItem);
             }
         }

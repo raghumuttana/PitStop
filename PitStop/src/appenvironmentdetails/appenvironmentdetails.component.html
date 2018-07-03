@@ -1,64 +1,71 @@
-<form>
+<form #form="ngForm" (submit)="submitForm(form)" novalidate>
     <div class="form-group row">
       <label for="inputSealId" class="col-sm-2 col-form-label text-capitalize">seal id</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputSealId" placeholder="34684">
+        <input type="text" class="form-control" name="inputSealId" [(ngModel)]="sealId" placeholder="34684">
       </div>
     </div>
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <label for="inputEmail3" class="col-sm-2 col-form-label">Contact Email</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        <input type="email" class="form-control" name="inputEmail3" [(ngModel)]="contactEmail" placeholder="Email">
       </div>
     </div>
- 
+  -->
     <div class="form-group row">              
       <label for="inputEmail3" class="col-sm-2 col-form-label">Environment</label>
-      <div class="col-sm-10">
+      <ul class="col-sm-10 list-inline" >
+        <li *ngFor="let env of environmentList; let i = index;" class="list-unstyled list-inline-item">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">iDEV</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">SIT</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">UAT</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">PROD</label>
-          </div>
-      </div>      
-    </div>
-
+            <input class="form-check-input" type="checkbox"  name="environmentCheckbox{{i}}" value="{{env.environmentValue }}"  
+            [checked]="(selectedEnvironments && (-1 !== selectedEnvironments.indexOf(env.environmentValue)) ? 'checked' : '')" 
+            (change) ="updateSelectedEnvironments($event)">
+            <label class="form-check-label" for="environmentCheckbox{{i}}">{{env.environmentValue }}</label>
+          </div>          
+        </li>
+        </ul>
+    </div>      
     <div class="form-group row">              
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Region</label>
-        <div class="col-sm-10">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-              <label class="form-check-label" for="inlineCheckbox1">iDEV</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-              <label class="form-check-label" for="inlineCheckbox1">SIT</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-              <label class="form-check-label" for="inlineCheckbox2">UAT</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-              <label class="form-check-label" for="inlineCheckbox3">PROD</label>
-            </div>
-        </div>      
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Region</label>
+      <ul class="col-sm-10 list-inline" >
+        <li *ngFor="let region of regionList; let i = index;" class="list-unstyled list-inline-item">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="regionCheckbox{{i}}" value="{{region.regionValue }}"  
+            [checked]="(selectedRegions && (-1 !== selectedRegions.indexOf(region.regionValue)) ? 'checked' : '')" 
+            (change) ="updateSelectedRegions($event)" >
+            <label class="form-check-label" for="regionCheckbox{{i}}">{{region.regionValue }}</label>
+          </div>          
+        </li>
+        </ul>
+    </div>     
+    <div class="form-group row">              
+      <label for="configName" class="col-sm-2 col-form-label">Network Zone</label>
+      <ul class="col-sm-10 list-inline" >
+        <li *ngFor="let networkZone of networkZoneList; let i = index;" class="list-unstyled list-inline-item">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox"  name="networkZoneCheckbox{{i}}" value="{{networkZone.networkZoneValue }}"  
+            [checked]="(selectedNetworkZones && (-1 !== selectedNetworkZones.indexOf(networkZone.networkZoneValue)) ? 'checked' : '')" 
+            (change) ="updateSelectedNetworkZones($event)" >
+            <label class="form-check-label" for="networkZoneCheckbox{{i}}">{{networkZone.networkZoneValue}}</label>
+          </div>          
+        </li>
+        </ul>
+    </div>      
+         
+    <div class="form-group row">              
+      <label for="configName" class="col-sm-2 col-form-label">Config Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="inputConfigName" [(ngModel)]="configName" placeholder="Configuration Name">
       </div>
+    </div>      
+       
 
     <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Save</button>
       </div>
+    </div>
+    <div>
+      {{sealId}}  //  {{configName}} // {{selectedEnvironments | json}} // {{selectedRegions | json}} // {{selectedNetworkZones | json}}
     </div>
   </form>
