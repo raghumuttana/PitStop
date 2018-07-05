@@ -45,19 +45,19 @@
                 </a>
                 <ul class="collapse list-unstyled" id="operatingSystems">
                     <li>                            
-                        <a [routerLink]="['/rawdiskconfig']">
+                        <a [routerLink]="['/oss']">
                             <i class="fab fa-microsoft"></i>
                             Windows 2012
                         </a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']" data-toggle="collapse" aria-expanded="false">
+                        <a [routerLink]="['/oss']" data-toggle="collapse" aria-expanded="false">
                             <i class="fab fa-windows"></i>
                             Windows 2016
                         </a>                      
                     </li> 
                     <li>
-                        <a [routerLink]="['/']"  data-toggle="collapse" aria-expanded="false">
+                        <a [routerLink]="['/oss']"  data-toggle="collapse" aria-expanded="false">
                             <i class="fab fa-microsoft"></i>
                             Windows 2016 Core
                         </a>                      
@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li>                            
-                <a [routerLink]="['/rawdiskconfig']">
+                <a [routerLink]="['/wip']">
                     <i class="far fa-file"></i>
                     File System Configuration                            
                 </a>
@@ -95,7 +95,7 @@
                 </ul>
             </li> 
             <li>    
-                <a href="#" [routerLink]="['/sccmappslist']">
+                <a [routerLink]="['/sccmappslist']">
                     <i class="fas fa-cloud-upload-alt"></i>
                     Install Applications (SCCM)
                 </a>
@@ -107,32 +107,32 @@
                 </a>
                 <ul class="collapse list-unstyled text-capitalize" id="selectRoles">
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-tree"></i>
                             Domain Controller</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-database"></i>
                             MSSQL SERVER 2012</a>
                     </li>                                     
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-database"></i>
                             MSSQL SERVER 2014</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-envelope-square"></i>
                             Exchange Server</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-server"></i>
                             IIS</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-server fa-sm fa-fw"></i>
                             application server</a>
                     </li>   
@@ -143,29 +143,29 @@
                             </a>
                             <ul class="collapse list-unstyled text-capitalize" id="sccm">
                                 <li>
-                                    <a [routerLink]="['/']">
+                                    <a [routerLink]="['/wip']">
                                         <i class="fas fa-plus"></i>
                                         primary site server</a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/']">
+                                    <a [routerLink]="['/wip']">
                                         <i class="fas fa-plus"></i>
                                         distribution point</a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/']">
+                                    <a [routerLink]="['/wip']">
                                         <i class="fas fa-plus"></i>
                                         management point</a>
                                 </li>
                             </ul>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-object-group"></i>
                             Sharepoint</a>
                     </li>   
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-object-group"></i>
                             citrix</a>
                     </li>                               
@@ -178,12 +178,12 @@
                 </a>
                 <ul class="collapse list-unstyled text-capitalize" id="configureUsingSPAPI">
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-envelope"></i>
                             Web Services</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-concierge-bell"></i>
                             Database Services</a>
                     </li>
@@ -197,7 +197,7 @@
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#" [routerLink]="['/sqlserver2014config']">
+                        <a [routerLink]="['/sqlserver2014config']">
                             <i class="fas fa-upload"></i>
                             Upload DSC</a>
                     </li>
@@ -215,46 +215,46 @@
                 </a>
                 <ul class="collapse list-unstyled" id="nlb">
                     <li>
-                        <a href="#" [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-plus"></i>
                             Create new NLB and Add Server</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/']">
+                        <a [routerLink]="['/wip']">
                             <i class="fas fa-plus-square"></i>
                             Add to existing NLB</a>
                     </li>                       
                 </ul>
             </li>                
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-bullseye"></i>
                     AIM Configuration</a>
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-fire"></i>
                     Configure Firewall Rules</a>
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-key"></i>
                     Configure Access</a>
             </li>
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-database"></i>
                     Backup Configuration</a>
             </li>
             <hr>
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-code-branch"></i>
                     Clone Configuration Using Existing Server </a>
             </li>
             <hr>
             <li>
-                <a href="#">
+                <a [routerLink]="['/wip']">
                     <i class="fas fa-code-branch"></i>
                     Clone Configuration Using Existing Blueprint </a>
             </li>

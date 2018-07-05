@@ -24,6 +24,8 @@ import { MyConfigComponent } from '../myconfig/myconfig.component';
 import { DndModule } from 'ng2-dnd';
 import { NgxSortableModule } from 'ngx-sortable';
 import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvironmentdetails.component';
+import { OperatingsystemComponent } from '../operatingsystem/operatingsystem.component';
+import { WorkinprogressComponent } from '../workinprogress/workinprogress.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvi
     MyConfigComponent,
     CheckoutComponent,
     DscblocksComponent,
-    AppenvironmentdetailsComponent
+    AppenvironmentdetailsComponent,
+    OperatingsystemComponent,
+    WorkinprogressComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +74,8 @@ import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvi
         {path: 'dscblocks', component: DscblocksComponent},
         {path: 'myorders/:id', component: ProgressTrackerComponent},
         {path: 'appenvironmentdetails', component: AppenvironmentdetailsComponent},
+        {path: 'oss', component: OperatingsystemComponent},
+        {path: 'wip', component: WorkinprogressComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],
