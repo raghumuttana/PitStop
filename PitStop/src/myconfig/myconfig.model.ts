@@ -6,7 +6,7 @@ export class ConfigItem {
 }
 
 
-export class Configuration {
+export class Configuration3 {
     constructor(public configName: string,
                 public sealId: string,
                 selectedEnvironments: string[],
@@ -17,3 +17,22 @@ export class Configuration {
                 selectedSccmApplications: string[]) {}
 }
 
+
+export class Configuration {
+    constructor(public ConfigName: string,
+                public ConfigValue: string,
+                public Version: string,
+                public CreatedBy: string,
+                public ModifiedBy: string
+            ) {}
+}
+export class SavedConfiguration {
+    constructor(public ConfigName: string,
+                public ConfigValue: string,
+                public Version: string,
+                public CreatedBy: string,
+                public ModifiedBy: string,
+                public CreatedDate: string,
+                public ModifiedDate: string
+            ) {}
+}

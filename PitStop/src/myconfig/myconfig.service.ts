@@ -3,12 +3,14 @@ import { RawDiskConfiguration } from '../rawdiskconfiguration/rawdiskconfigurati
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Payload } from '../appenvironmentdetails/appenvironmentdetails.model';
+import { Payload, ConfigruationStep } from '../appenvironmentdetails/appenvironmentdetails.model';
+import { Configuration, SavedConfiguration } from './myconfig.model';
 
 @Injectable()
 export class MyConfigService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+    }
     selectedSccmApplications: string[] = [];
     selectedEnvironments: string[] = [];
     rawDiskConfiguration: RawDiskConfiguration;
@@ -18,6 +20,8 @@ export class MyConfigService {
     configName: string;
     selectedRegions: string[] = [];
     selectedNetworkZones: string[] = [];
+    configurationSteps: ConfigruationStep[] = [];
+    sortedConfigurationSteps: ConfigruationStep[] = [];
 
     getHeaders: HttpHeaders = new HttpHeaders(
             {'Accept': 'application/json',
@@ -37,19 +41,46 @@ export class MyConfigService {
                                             payload , { headers: new HttpHeaders({'Content-Type' : 'application/json'})});
     }
 
-    savePayload(): Observable<Payload> {
-        const payload = JSON.stringify([
-                           JSON.stringify(new Payload('configName', this.configName)),
-                           JSON.stringify(new Payload('sealId', this.sealId)),
-                           JSON.stringify(new Payload('selectedSccmApplications', JSON.stringify(this.selectedSccmApplications))),
-                           JSON.stringify(new Payload('rawDiskConfiguration', JSON.stringify(this.rawDiskConfiguration))),
-                           JSON.stringify(new Payload('selectedRegions', JSON.stringify(this.selectedRegions))),
-                           JSON.stringify(new Payload('selectedNetworkZones', JSON.stringify(this.selectedNetworkZones))),
-                           JSON.stringify(new Payload('selectedEnvironments', JSON.stringify(this.selectedEnvironments)))]);
-        const obj = new Payload(this.configName, payload);
-        return this.http.post<Payload>('http://systemcenter-idev.jpmchase.net/WinCMS.API/api/Events',
+    savePayload(): Observable<Configuration> {
+        // Stringify the sorted payload
+        for (let i = 0; i < this.sortedConfigurationSteps.length; i++) {
+            this.sortedConfigurationSteps[i].sequence = i + 1;
+        }
+
+        const configItems =  {
+                            'configName': this.configName,
+                            'sealId': this.sealId,
+                            'selectedRegions': JSON.stringify(this.selectedRegions),
+                            'selectedNetworkZones': JSON.stringify(this.selectedNetworkZones),
+                            'selectedEnvironments' : JSON.stringify( this.selectedEnvironments),
+                            'payload' : JSON.stringify(this.sortedConfigurationSteps)
+                            };
+        const obj = new Configuration(this.configName, JSON.stringify(configItems), '1.0', 'rreddy', 'rreddy');
+        return this.http.post<Configuration>('http://systemcenter-idev.jpmchase.net/ConfigurationManagement/api/configurationBlueprints',
                                             obj , { headers: new HttpHeaders({'Content-Type' : 'application/json'})});
     }
+
+    getAllConfigurations(): Observable<SavedConfiguration[]> {
+        return this.http.get<SavedConfiguration[]>
+                ('http://systemcenter-idev.jpmchase.net/ConfigurationManagement/api/configurationBlueprints',
+                            { headers: new HttpHeaders({'Content-Type' : 'application/json'})});
+    }
+
+    clearForms(): any {
+        this.configName = '';
+        this.selectedSccmApplications = [];
+        this.selectedEnvironments = [];
+        this.rawDiskConfiguration = new RawDiskConfiguration('', '', '', '');
+        this.configsCount = 0;
+        this.sealId = '';
+        this.contactEmail = '';
+        this.configName = '';
+        this.selectedRegions = [];
+        this.selectedNetworkZones = [];
+        this.configurationSteps = [];
+        this.sortedConfigurationSteps = [];
+     }
 }
+
 
 

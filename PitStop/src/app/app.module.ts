@@ -26,6 +26,7 @@ import { NgxSortableModule } from 'ngx-sortable';
 import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvironmentdetails.component';
 import { OperatingsystemComponent } from '../operatingsystem/operatingsystem.component';
 import { WorkinprogressComponent } from '../workinprogress/workinprogress.component';
+import { MysavedconfigsComponent } from '../mysavedconfigs/mysavedconfigs.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { WorkinprogressComponent } from '../workinprogress/workinprogress.compon
     DscblocksComponent,
     AppenvironmentdetailsComponent,
     OperatingsystemComponent,
-    WorkinprogressComponent
+    WorkinprogressComponent,
+    MysavedconfigsComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ import { WorkinprogressComponent } from '../workinprogress/workinprogress.compon
         {path: 'appenvironmentdetails', component: AppenvironmentdetailsComponent},
         {path: 'oss', component: OperatingsystemComponent},
         {path: 'wip', component: WorkinprogressComponent},
+        {path: 'mysavedconfigs', component: MysavedconfigsComponent},
         {path: '**', component: FeaturedListComponent}
     ], {useHash: true})
   ],

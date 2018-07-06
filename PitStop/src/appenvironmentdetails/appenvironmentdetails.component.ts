@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyConfigService } from '../myconfig/myconfig.service';
 import { NgForm } from '@angular/forms';
-import { Payload } from './appenvironmentdetails.model';
+import {  Configuration } from '../myconfig/myconfig.model';
 
 
 @Component({
@@ -10,6 +10,7 @@ import { Payload } from './appenvironmentdetails.model';
   styleUrls: ['./appenvironmentdetails.component.css']
 })
 export class AppenvironmentdetailsComponent implements OnInit {
+
   get selectedEnvironments(): string[] {
       return this._myConfigService.selectedEnvironments;
   }
@@ -126,7 +127,7 @@ export class AppenvironmentdetailsComponent implements OnInit {
     }
   ];
 
-  temp: Payload;
+  temp: Configuration;
 
   constructor(private _myConfigService: MyConfigService) {
   }
@@ -168,33 +169,11 @@ export class AppenvironmentdetailsComponent implements OnInit {
   }
 
   submitForm(form: NgForm) {
-  //   const obj = new Payload('test1', 'eventpayload');
-  //   this._myConfigService.getEventData()
-  //             .subscribe(
-  //               (data: string) => this.temp = data,
-  //               (err: any) => console.log(err),
-  //               () => console.log('all done.')
-  //             );
-
-  //   this._myConfigService.getEventDataById('VSIN7U6909')
-  //   .subscribe(
-  //     (data: string) => this.temp = data,
-  //     (err: any) => console.log(err),
-  //     () => console.log('all done.')
-  //   );
-
-  //   this._myConfigService.postPayload(obj)
-  //   .subscribe(
-  //     (data: string) => this.temp = data,
-  //     (err: any) => console.log(err),
-  //     () => console.log('all done.')
-  //   );
-
     this._myConfigService.savePayload()
     .subscribe(
-      (data: Payload) => this.temp = data,
+      (data => this.temp = data),
       (err: any) => console.log(err),
-      () => console.log('all done.')
+      () => this._myConfigService.clearForms()
     );
    }
 }

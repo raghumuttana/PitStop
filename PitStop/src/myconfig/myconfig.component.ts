@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyConfigService } from './myconfig.service';
 import { ConfigItem } from './myconfig.model';
-import { RawDiskConfiguration } from '../rawdiskconfiguration/rawdiskconfiguration.model';
 
 @Component({
     selector: 'app-myconfig',
@@ -31,14 +30,17 @@ export class MyConfigComponent implements OnInit {
     }
 
     constructor(public _myconfigService: MyConfigService) {
-        this.buildSccmAppsPayload();
-        this.buildRawDiskConfiguration();
-        this.firstSortedList = this.configItems;
-        this.secondSortedList = this.configItems;
+        this.firstSortedList =  _myconfigService.configurationSteps;
+        this.secondSortedList =  _myconfigService.configurationSteps;
+        // this.buildSccmAppsPayload();
+        // this.buildRawDiskConfiguration();
+        // this.firstSortedList = this.configItems;
+        // this.secondSortedList = this.configItems;
     }
 
     listSorted(list: any) {
         this.firstSortedList = list;
+        this._myconfigService.sortedConfigurationSteps = list;
       }
 
       listSortedSecond(list: any) {

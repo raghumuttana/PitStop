@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RawDiskConfiguration } from './rawdiskconfiguration.model';
 import { NgForm } from '@angular/forms';
 import { MyConfigService } from '../myconfig/myconfig.service';
+import { ConfigruationStep } from '../appenvironmentdetails/appenvironmentdetails.model';
 
 @Component({
     selector: 'app-rawdiskconfiguration',
@@ -31,5 +32,11 @@ export class RawDiskConfigurationComponent implements OnInit {
 
     submitForm(form: NgForm) {
         this._myConfigSvc.rawDiskConfiguration = this.model;
+        // remove the existing rawdiskconfigruation step
+        const rawdiskconfigurationStep  = new ConfigruationStep(0, 'rawdiskconfiguration', JSON.stringify(this.model));
+        const index = this._myConfigSvc.configurationSteps.findIndex( x => x.microserviceName === 'rawdiskconfiguration');
+        this._myConfigSvc.configurationSteps.splice(index, 1);
+        // add the new rawdiskconfiguration step
+        this._myConfigSvc.configurationSteps.push(rawdiskconfigurationStep);
     }
 }

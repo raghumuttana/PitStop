@@ -14,11 +14,11 @@
         </div>
     </div>-->
 <div> 
-    <ngx-sortable [items]="configItems" [name]="'My Configuration'" [listStyle]="listStyle" (listSorted)="listSorted($event)">
+    <ngx-sortable [items]="secondSortedList" [name]="'My Configuration'" [listStyle]="listStyle" (listSorted)="listSorted($event)">
         <ng-template let-item>
             <div class="sortable-list-item">
-               <p class="flow-text">{{item.Category}}</p>
-               <p style="font-size:.75em;"><span>Payload: {{item.Payload}}</span></p> 
+               <p class="flow-text">{{item.microserviceName}}</p>
+               <p style="font-size:.75em;"><span>Payload: {{item.payload}}</span></p> 
             </div>
         </ng-template>
     </ngx-sortable>

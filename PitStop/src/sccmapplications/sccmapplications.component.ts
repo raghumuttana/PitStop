@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { SccmApplicationsService } from './sccmapplications.service';
 import { NgForm } from '@angular/forms';
 import { MyConfigService } from '../myconfig/myconfig.service';
+import { ConfigruationStep } from '../appenvironmentdetails/appenvironmentdetails.model';
 
 @Component({
     selector: 'app-sccmapplications',
@@ -40,8 +41,15 @@ export class SccmApplicationListComponent implements OnInit {
 
     submitForm(form: NgForm) {
         this.selectedApplications.forEach(element => {
-            this._sccmApplicationsService.callWindowsDeploymentAPI(element.toString());
             this._myConfigService.configsCount++;
         });
+
+        const sccmApplicationsStep  = new ConfigruationStep(0, 'installapplicationssccm', JSON.stringify(this.selectedApplications));
+        const index = this._myConfigService.configurationSteps.findIndex( x => x.microserviceName === 'installapplicationssccm');
+        if (index > -1) {
+            this._myConfigService.configurationSteps.splice(index, 1);
+        }
+        // add the new rawdiskconfiguration step
+        this._myConfigService.configurationSteps.push(sccmApplicationsStep);
     }
 }
