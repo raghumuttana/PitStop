@@ -10,6 +10,7 @@ import {  Configuration } from '../myconfig/myconfig.model';
   styleUrls: ['./appenvironmentdetails.component.css']
 })
 export class AppenvironmentdetailsComponent implements OnInit {
+  showLoader = false;
 
   get selectedEnvironments(): string[] {
       return this._myConfigService.selectedEnvironments;
@@ -169,11 +170,12 @@ export class AppenvironmentdetailsComponent implements OnInit {
   }
 
   submitForm(form: NgForm) {
+    this.showLoader = true;
     this._myConfigService.savePayload()
     .subscribe(
       (data => this.temp = data),
-      (err: any) => console.log(err),
-      () => this._myConfigService.clearForms()
+      (err: any) => {console.log(err); this.showLoader = false; },
+      () => {this._myConfigService.clearForms();  this.showLoader = false; }
     );
    }
 }

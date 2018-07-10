@@ -27,7 +27,10 @@ import { AppenvironmentdetailsComponent } from '../appenvironmentdetails/appenvi
 import { OperatingsystemComponent } from '../operatingsystem/operatingsystem.component';
 import { WorkinprogressComponent } from '../workinprogress/workinprogress.component';
 import { MysavedconfigsComponent } from '../mysavedconfigs/mysavedconfigs.component';
-
+import { AimconfigurationComponent } from '../aimconfiguration/aimconfiguration.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { MatProgressSpinnerModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { MysavedconfigsComponent } from '../mysavedconfigs/mysavedconfigs.compon
     AppenvironmentdetailsComponent,
     OperatingsystemComponent,
     WorkinprogressComponent,
-    MysavedconfigsComponent
+    MysavedconfigsComponent,
+    AimconfigurationComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,8 @@ import { MysavedconfigsComponent } from '../mysavedconfigs/mysavedconfigs.compon
     HttpModule,
     HttpClientModule,
     NgxSortableModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     DndModule.forRoot(),
     TreeviewModule.forRoot(),
     RouterModule.forRoot([
@@ -79,7 +86,8 @@ import { MysavedconfigsComponent } from '../mysavedconfigs/mysavedconfigs.compon
         {path: 'oss', component: OperatingsystemComponent},
         {path: 'wip', component: WorkinprogressComponent},
         {path: 'mysavedconfigs', component: MysavedconfigsComponent},
-        {path: '**', component: FeaturedListComponent}
+        {path: 'aimconfig', component: AimconfigurationComponent},
+        {path: '**', component: WorkinprogressComponent}
     ], {useHash: true})
   ],
   providers: [],

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyConfigService } from './myconfig.service';
 import { ConfigItem } from './myconfig.model';
-
 @Component({
     selector: 'app-myconfig',
     templateUrl: 'myconfig.component.html',

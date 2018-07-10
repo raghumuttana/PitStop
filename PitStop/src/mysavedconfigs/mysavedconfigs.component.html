@@ -1,12 +1,13 @@
 <div class="mt-3"> 
   <h3>
     My Saved Configurations
-  </h3>
-    <div *ngIf="savedConfigs" class="mt-3">
-      <ul class="list-group">
-        <li class="list-group-item"  *ngFor="let config of savedConfigs;">
-              <a [routerLink]="['/checkout']">{{config.ConfigName}}</a>
-        </li>
-      </ul>
-    </div>
+  </h3> 
+  <app-loader *ngIf="showLoader"></app-loader>
+  <div *ngIf="savedConfigs" class="mt-3">
+    <ul class="list-group">
+      <li class="list-group-item"  *ngFor="let config of savedConfigs;">
+            <a [routerLink]="['/checkout']">{{config.ConfigName}}</a>
+      </li>
+    </ul>
+  </div>
 </div>
